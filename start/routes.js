@@ -20,4 +20,6 @@ Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
 
-Route.post("/api/users","UserController.store");
+Route.group(() =>{
+  Route.post("/","UserController.store");
+}).prefix("api/usuarios")
