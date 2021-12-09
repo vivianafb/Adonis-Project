@@ -14,6 +14,12 @@ class UserController {
         });
         response.status(201).json({msg: "Usuario almacenado", user})
     }
+
+    async login({request,response,auth}){
+        const {email,password} = request.all();
+        const token = await auth.attempt(email,password);
+        response.status(200).json({msg: "Login correcto", token})
+    }
 }
 
 module.exports = UserController

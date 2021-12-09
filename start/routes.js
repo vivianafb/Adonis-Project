@@ -1,5 +1,7 @@
 'use strict'
 
+const UserController = require('../app/Controllers/Http/UserController')
+
 /*
 |--------------------------------------------------------------------------
 | Routes
@@ -22,4 +24,5 @@ Route.get('/', () => {
 
 Route.group(() =>{
   Route.post("/","UserController.store");
+  Route.post("/login", "UserController.login")
 }).prefix("api/usuarios")
