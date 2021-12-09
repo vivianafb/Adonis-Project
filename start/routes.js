@@ -30,6 +30,7 @@ Route.group(() =>{
 
 Route.group(() =>{
   Route.get("/","ProyectoController.find");
+  Route.post("/","ProyectoController.create");
 })
 .prefix("api/proyectos")
 .middleware("auth")
