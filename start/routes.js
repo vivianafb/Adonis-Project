@@ -26,3 +26,10 @@ Route.group(() =>{
   Route.post("/","UserController.store");
   Route.post("/login", "UserController.login")
 }).prefix("api/usuarios")
+
+
+Route.group(() =>{
+  Route.get("/","ProyectoController.find");
+})
+.prefix("api/proyectos")
+.middleware("auth")
